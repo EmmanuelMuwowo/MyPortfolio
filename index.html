@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1>MUWOWO Emmanuel</h1>
+
+                <!--------Navigation menu-------->
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Service</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+              <div class="header-text">
+                <p>Ul/UX Designer</p>
+                <h2>Hi, I'm <span>MUWOWO</span> <br> Emmanuel from Zambia</h2>
+              </div>
+            </nav>
+        </div>
+    </div>
+    <!-----about----->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/col-1.jpeg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I am a web developer, information systems and
+                        technology personnel, and data analyst driven by
+                         a desire to  create impactful digital solutions. With a 
+                        combination of technical expertise
+                         and a creative mindset, i am poised to tackle
+                          any challenge and make a meaningful impact in
+                          the ever-evolving world of technology.</p>
+
+                          <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">skills</p>
+                            <p class="tab-links"onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links"onclick="opentab('education')">Education</p>
+                          </div>
+                          <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span> UI/UX</span><br>Designing web/app interfaces</li>
+                                <li><span> Web Development</span><br>Web app development</li>
+                                <li><span> App Development</span><br>Building Android/iOS Apps</li>
+                                <li><span> Data Analysts</span><br>Data Collection/Data Quality Assurance</li>
+                                <li><span> IT</span><br>Database Administrator/Information system manager</li>
+                            </ul>
+                          </div>
+                          <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span> 2029- Current</span><br>Designing web/app interfaces and Information systems Manager at NAPSA</li>
+                                <li><span> 2028-2029</span><br>Data Analyst at Zambia Revenue Authourity(ZRA)</li>
+                                <li><span> 2027</span><br>Internship at FNB Bank</li>
+                            </ul>
+                          </div>
+                          <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span> 2022-2023</span><br>Bsc Of Computer Science From The University of Zambia</li>
+                                <li><span> 2024-2026</span><br>Bsc Of Information Systems and Technology From UNILUS</li>
+                            </ul>
+                          </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--------------------------Service Section---------------------------->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="material-icons">code</i>
+                <h2>Web Design</h2>
+                <p>Crafting websites that captivate at first glance and keep users engaged. 
+                    With designs that are sleek, responsive, and user-focused, 
+                    I turn your ideas into a digital experience that leaves a lasting impact</p>
+                    <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="material-icons">crop</i>
+                <h2>UI/UX Design</h2>  
+                <p>Designing experiences that are as intuitive as they are beautiful.
+                    My UI/UX services focus on user satisfaction,
+                    blending creativity with functionality to make your digital product feel effortless</p>
+                    <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="material-icons">insights</i>
+                <h2>Data Analysis</h2>
+                <p>Turning data into actionable insights that drive growth.
+                    I dig into the numbers, uncovering trends and opportunities 
+                    that help you make smarter decisions and achieve your business goals</p>
+                    <a href="#">Learn more</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-------------------Portfolio------------------------>
+
+<div id="Portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+        <div class="work">
+            <image src="images/work.jpeg">
+                <div class="layer">
+                    <h3></h3>
+                </div>
+        </div>
+
+        <div class="work">
+            <image src="images/work-2.jpeg">
+        </div>
+
+        <div class="work">
+            <image src="images/work-3.jpeg">
+        </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (let tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (let tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            document.getElementById(tabname).classList.add("active-tab");
+            event.currentTarget.classList.add("active-link")
+        }
+
+    </script>
+</body>
+</html>
