@@ -326,50 +326,123 @@ form btn2{
     margin-top: 20px;
 }
 
-/*----------------------Cssfor small screen--------------*/
-nav uil{
-    display: none;
-}
-.menu-toggle{
-    font-size: 30px;
-    cursor: pointer;
-    display: none;
+/*----------------------Css for small screen--------------*/
+
+.menu-toggle {
+    display: none; /* hidden by default (desktop) */
 }
 
+nav ul i.uil-times {
+    display: none; /* also hidden on desktop */
+}
+
+
 @media (max-width: 768px){
-    #header{
-         background-image: url(images/mbp.jpg);
+    #header {
+        background-image: url(images/mbp.jpg);
     }
-    .header-text{
+
+    .header-text {
         margin-top: 40%;
         font-size: 16px;
     }
-    .header-text h1{
+
+    .header-text h1 {
         font-size: 30px;
     }
-    .header-text p{
-        color: #fff;
-    }
-    .header-text h2{
-        color: #fff;
-    }
-    nav uil{
-        display: block;
-        font-size: 25px;
-    }
-    nav ul{
-        background: #ff004f;
-        position: flexed;
-        top: 0;
-        right: 0;
-        width: 200px;
-        height: 1000vh;
-        padding: 10px;
-        text-align: right;
 
+    .header-text p {
+        color: #fff;
     }
-    nav ul.active{
+
+    .header-text h2 {
+        color: #fff;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 200px;
+        height: 100vh;
+        background: #111;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 60px 20px;
+        transition: right 0.4s ease-in-out;
+        z-index: 999;
+    }
+
+    nav ul.active {
+        right: 0;
+    }
+
+    nav ul li {
+        margin: 20px 0;
+    }
+
+    nav ul i.uil-times {
+        font-size: 30px;
+        color: #fff;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .menu-toggle {
         display: block;
         color: #fff;
+        font-size: 30px;
+        cursor: pointer;
+    }
+	
+	/* Show the hamburger icon */
+    .menu-toggle {
+        display: block;
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    /* Style for the menu */
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 200px;
+        height: 100vh;
+        background: #111;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 60px 20px;
+        transition: right 0.4s ease-in-out;
+        display: flex;
+    }
+
+    nav ul.active {
+        right: 0;
+    }
+
+    nav ul li {
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+    }
+
+    /* Show the close (X) button */
+    nav ul i.uil-times {
+        display: block;
+        font-size: 30px;
+        color: #fff;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
     }
 }

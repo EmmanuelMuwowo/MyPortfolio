@@ -12,25 +12,25 @@
 <body>
     <div id="header">
         <div class="container">
-            <nav>
-                <h1>MUWOWO Emmanuel</h1>
-                <i class="uil uil-bars menu-toggle" onclick="toggleMenu()"></i>
+           <nav>
+    <h1>MUWOWO Emmanuel</h1>
+    <i class="uil uil-bars menu-toggle" onclick="toggleMenu()"></i>
 
-                <!--------Navigation menu-------->
-                <ul id="menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Service</a></li>
-                    <li><a href="#Portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <i class="uil uil-times"></i>
-                </ul>
-                <i class="uil uil-bars"></i>
-              <div class="header-text">
-                <p>Ul/UX Designer</p>
-                <h2>Hi, I'm <span>MUWOWO</span> <br> Emmanuel from Zambia</h2>
-              </div>
-            </nav>
+    <ul id="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Service</a></li>
+        <li><a href="#Portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <i class="uil uil-times" onclick="toggleMenu()"></i>
+    </ul>
+
+    <div class="header-text">
+        <p>UI/UX Designer</p>
+        <h2>Hi, I'm <span>MUWOWO</span><br>Emmanuel from Zambia</h2>
+    </div>
+</nav>
+
         </div>
     </div>
     <!-----about----->
@@ -191,20 +191,19 @@
     </div>
 
     <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
+    function toggleMenu() {
+        var menu = document.getElementById("menu");
+        menu.classList.toggle("active");
+    }
 
-        function opentab(tabname) {
-            for (let tablink of tablinks) {
-                tablink.classList.remove("active-link");
-            }
-            for (let tabcontent of tabcontents) {
-                tabcontent.classList.remove("active-tab");
-            }
-            document.getElementById(tabname).classList.add("active-tab");
-            event.currentTarget.classList.add("active-link")
-        }
+    // Optional: close menu when clicking a link (for mobile)
+    const menuLinks = document.querySelectorAll("#menu li a");
+    menuLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            document.getElementById("menu").classList.remove("active");
+        });
+    });
+</script>
 
-    </script>
 </body>
 </html>
