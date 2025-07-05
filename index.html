@@ -12,9 +12,9 @@
 <body>
     <div id="header">
         <div class="container">
-           <nav>
+<nav>
     <h1>MUWOWO Emmanuel</h1>
-    <i class="uil uil-bars menu-toggle" onclick="toggleMenu()"></i>
+    <i class="uil uil-bars menu-toggle" id="open-menu" onclick="toggleMenu()"></i>
 
     <ul id="menu">
         <li><a href="#">Home</a></li>
@@ -22,14 +22,16 @@
         <li><a href="#services">Service</a></li>
         <li><a href="#Portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
-        <i class="uil uil-times" onclick="toggleMenu()"></i>
     </ul>
+
+    <i class="uil uil-times" id="close-menu" onclick="toggleMenu()"></i>
 
     <div class="header-text">
         <p>UI/UX Designer</p>
         <h2>Hi, I'm <span>MUWOWO</span><br>Emmanuel from Zambia</h2>
     </div>
 </nav>
+
 
         </div>
     </div>
@@ -185,25 +187,47 @@
 
             </div>
             <div class="copyright">
-                <p>Copyright @MUWOWO. Made with QuantumSync</p>
+                <p>Copyright @MUWOWO. Made by QuantumSync</p>
             </div>
         </div>
     </div>
 
     <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+        for (let tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for (let tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        document.getElementById(tabname).classList.add("active-tab");
+        event.currentTarget.classList.add("active-link");
+    }
+
+    const menu = document.getElementById("menu");
+    const openBtn = document.getElementById("open-menu");
+    const closeBtn = document.getElementById("close-menu");
+
     function toggleMenu() {
-        var menu = document.getElementById("menu");
-        menu.classList.toggle("active");
+        const isOpen = menu.classList.toggle("active");
+        openBtn.style.display = isOpen ? "none" : "block";
+        closeBtn.style.display = isOpen ? "block" : "none";
     }
 
     // Optional: close menu when clicking a link (for mobile)
     const menuLinks = document.querySelectorAll("#menu li a");
     menuLinks.forEach(link => {
         link.addEventListener("click", () => {
-            document.getElementById("menu").classList.remove("active");
+            menu.classList.remove("active");
+            openBtn.style.display = "block";
+            closeBtn.style.display = "none";
         });
     });
 </script>
+
 
 </body>
 </html>
